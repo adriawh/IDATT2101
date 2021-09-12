@@ -1,3 +1,5 @@
+package Assignments.excerise_three;
+
 import java.util.Date;
 import java.util.Random;
 
@@ -13,7 +15,7 @@ public class Oppg2 {
         int storrelse = 1_000_000;
 
         //antall forskjellige lister vi skal teste
-        int antKjoringer = 100;
+        int antKjoringer = 10;
 
         //Listetype vi skal teste med
         String listetype = "REPETERENDE_TALL";
