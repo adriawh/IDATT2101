@@ -1,1 +1,7 @@
-# algorithms-and-data-structures
+# Algorithms and data structures
+
+Mandatory assignments from the subject algorithms and data structures. 
+
+
+
+
