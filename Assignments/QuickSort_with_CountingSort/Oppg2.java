@@ -1,6 +1,5 @@
-package Assignments.excerise_three;
+package Assignments.QuickSort_with_CountingSort;
 
-import java.util.Date;
 import java.util.Random;
 
 public class Oppg2 {
