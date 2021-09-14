@@ -4,8 +4,8 @@ public class Josephus {
 
     public static void main(String[] args) {
 
-        int numberOfPeople = 10;
-        int interval = 4;
+        int numberOfPeople = 40;
+        int interval = 3;
 
         System.out.println("*** The Josephus problem ***");
         System.out.println("Number of people: " + numberOfPeople +
@@ -36,13 +36,23 @@ public class Josephus {
 
         Node current = l.getHead();
         do{
-            for(int i = 0; i<n-1; i++){//iterating to the next person to be executed based on the interval n
-                current = current.getNext();
+            if (n > 2) {
+                for(int i = 0; i<n-2; i++){//iterating to the correct node
+                    current = current.getNext();
+                }
             }
-            l.deleteNode(current.getValue());//executing the person
-            current = current.getNext(); //iterating
+            if(current.getNext()==l.getHead()){//if removing the head, asign new head.
+                l.setHead(current.getNext().getNext());
+            }
+            if(current.getNext() == l.getTail()){//if removing the tail, asign new tail.
+                l.setTail(current);
+            }
 
-        } while(l.getHead().getValue() != l.getTail().getValue());
+            current.setNext(current.getNext().getNext());//remove
+
+            current = current.getNext();//iterating
+
+        } while(l.getHead() != l.getTail());
 
         return l.getHead().getValue();
     }

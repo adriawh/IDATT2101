@@ -14,9 +14,19 @@ public class CircularList {
         return head;
     }
 
+    public void setHead(Node head) {
+        this.head = head;
+    }
+
     public Node getTail() {
         return tail;
     }
+
+    public void setTail(Node tail) {
+        this.tail = tail;
+    }
+
+
 
     /**
      * Adding a node to the circular list.
@@ -39,42 +49,4 @@ public class CircularList {
         tail.setNext(head);
     }
 
-
-
-    /**
-     * Method for deleting a node based on a given value
-     *
-     * @param valueToDelete the valure of the node to be deleted
-     */
-    public void deleteNode(int valueToDelete) {
-
-        Node currentNode = head; //sets the starting point for the iteration as the head
-
-        if (head == null) { //if the list is empty, return
-            return;
-        }
-
-        do {
-            Node nextNode = currentNode.getNext();
-
-            if (nextNode.getValue() == valueToDelete) {
-                if (tail == head) { // the list has only one single element
-                    head = null;
-                    tail = null;
-                } else {
-                    currentNode.setNext(nextNode.getNext());//removing the node to be removed by overwriting
-                    //the reference to the node to be deleted with the next node
-
-                    if (head == nextNode) { //we're deleting the head
-                        head = head.getNext();
-                    }
-
-                    if (tail == nextNode) { //we're deleting the tail
-                        tail = currentNode;
-                    }
-                }
-            }
-            currentNode = nextNode; //iterating to the next Node,
-        } while (currentNode != head);
-    }
 }
