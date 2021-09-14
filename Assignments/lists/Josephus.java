@@ -27,17 +27,18 @@ public class Josephus {
      * @param n interval size
      * @return the placement that would survive.
      */
-    private static int josephus(int m, int n){
+    private static int josephus(int n, int m){
         CircularList l = new CircularList();
 
-        for(int i = 1; i<=m; i++){//generating a circular list with the specified count m
+        for(int i = 1; i<=n; i++){//generating a circular list with the specified count m
             l.addNode(i);
         }
 
         Node current = l.getHead();
         do{
-            if (n > 2) {
-                for(int i = 0; i<n-2; i++){//iterating to the correct node
+
+            if (m > 2) {
+                for(int i = 0; i<m-2; i++){//iterating to the correct node
                     current = current.getNext();
                 }
             }

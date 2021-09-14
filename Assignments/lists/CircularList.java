@@ -4,11 +4,6 @@ public class CircularList {
 
     private Node head = null;
     private Node tail = null;
-    private int elementCount = 0;
-
-    public int getElementCount() {
-        return elementCount;
-    }
 
     public Node getHead() {
         return head;
