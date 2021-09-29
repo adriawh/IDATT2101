@@ -5,7 +5,6 @@ public class HashTableSquared extends HashTable{
         super(m);
     }
 
-
     /**
      * Add a value to the hashTable
      * @param value the String value to be added
@@ -17,14 +16,16 @@ public class HashTableSquared extends HashTable{
             if(array[j] == 0){
                 array[j] = value;
                 return j;
+            }else{
+                collision++;
             }
         }
         return -1; //Full
     }
 
-    protected int probe(int hash, int i) {
-        int k1 = 5;
-        int k2 = 7;
-        return (int) (hash+k1*i+k2*Math.pow(i,2)%arraySize);
+    private int probe(int hash, int i) {
+        int k1 = 7;
+        int k2 = 9;
+        return (int) ((hash+k1*i+k2*Math.pow(i,2))%arraySize);
     }
 }

@@ -11,11 +11,13 @@ public class HashTableLinear extends HashTable {
      */
     protected int addValue(int value){
         int h = hash(value);
-        for (int i = 0; i<arraySize;++i){
+        for (int i = 0; i<arraySize;i++){
             int j = probe(h,i);
             if(array[j] == 0){
                 array[j] = value;
                 return j;
+            }else{
+                collision++;
             }
         }
         return -1; //Full

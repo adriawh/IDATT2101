@@ -2,27 +2,38 @@ package Assignments.Hash.Oppg2;
 
 public class HashTableDouble extends HashTable {
 
-    public HashTableDouble(int m) {
-        super(m);
+    public HashTableDouble(int m, double prosent) {
+        super(m, prosent);
     }
 
     @Override
     protected int addValue(int value) {
-        int hashVal = hashOne(value); // hash the key
-        int stepSize = hashTwo(value); // get step size
-        // until empty cell or -1
-        while (array[hashVal] <= 0 && array[hashVal] != -1) {
-            hashVal += stepSize; // add the step
-            hashVal %= arraySize; // for wraparound
+        int h1 = hashOne(value);
+        int h2;
+        int pos = h1;
+
+        if (array[pos] == 0) {
+            array[pos] = value;
+            return pos;
+        } else {
+            h2 = hashTwo(value);
+            while (array[pos] != 0) {
+                collision++;
+                pos = probe(pos, h2);
+                if (array[pos] == 0) {
+                    array[pos] = value;
+                    return pos;
+                }
+            }
         }
-        hashArray[hashVal] = item; // insert item
+        return -1; //Full
     }
 
-    protected int probe(int h1, int h2, int i) {
-        return (h1 + i*h2) % arraySize;
+    protected int probe(int pos, int h2) {
+        return (pos + h2) % arraySize;
     }
 
-    private int hashOne(int value){
+    private int hashOne(int value) {
         return value % arraySize;
     }
 

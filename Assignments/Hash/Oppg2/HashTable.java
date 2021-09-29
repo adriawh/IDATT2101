@@ -1,19 +1,14 @@
 package Assignments.Hash.Oppg2;
 
-import Assignments.Hash.Oppg1.Node;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Random;
 
 public abstract class HashTable {
 
     protected int[] array;
     protected int arraySize;
+    protected int[] generatedArray;
 
-    private int collision = 0;
+    protected int collision = 0;
     protected int numberOfNames = 0;
 
     public HashTable(int m){
@@ -22,15 +17,7 @@ public abstract class HashTable {
         fillTableRandomNumbers();
     }
 
-    /**
-     *
-     * @return the average collisons each element
-     */
-    public double getAverageCollisions(){
-        return (double) collision/numberOfNames;
-    }
-
-
+    public abstract void printData();
 
 
     /**
@@ -61,9 +48,25 @@ public abstract class HashTable {
             originalArray[randomIndexToSwap] = originalArray[i];
             originalArray[i] = temp;
         }
-        for (int i = 0; i<originalArray.length; i++){
-            addValue(originalArray[i]);
+        return originalArray;
+    }
+
+    /**
+     *
+     * @param array array to populate hashTable
+     * @return time used to fill the hashTable
+     */
+    public long fillHashTable(int[] array){
+
+        long start = System.currentTimeMillis();
+        for (int i = 0; i<array.length; i++){
+            if (array[i] <1){
+                System.out.println(array[i]);
+            }
+            addValue(array[i]);
         }
+        long end = System.currentTimeMillis();
+        return end-start;
     }
     public double calculateLoadFactor(){
         return (double) numberOfNames/arraySize;

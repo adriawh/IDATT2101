@@ -27,6 +27,7 @@ public class HashTable {
      *
      * @return the average collisons each element
      */
+
     public double getAverageCollisions(){
         return (double) collision/numberOfNames;
     }
@@ -35,6 +36,7 @@ public class HashTable {
      * Add a value to the hashTable
      * @param value the String value to be added
      */
+
     private void addValue(String value) {
         numberOfNames++;
         Node n = new Node(value);
@@ -55,6 +57,7 @@ public class HashTable {
      * @param n value to find position of
      * @return position
      */
+
     public String findPosition(String n){
         int index = generateIndex(n);
 
