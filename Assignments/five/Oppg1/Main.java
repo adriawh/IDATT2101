@@ -1,4 +1,4 @@
-package Assignments.Hash.Oppg1;
+package Assignments.five.Oppg1;
 
 public class Main {
 

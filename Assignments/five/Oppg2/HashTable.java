@@ -1,4 +1,4 @@
-package Assignments.Hash.Oppg2;
+package Assignments.five.Oppg2;
 
 import java.util.Random;
 

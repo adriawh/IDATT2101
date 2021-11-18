@@ -1,4 +1,4 @@
-package Assignments.Hash.Oppg1;
+package Assignments.five.Oppg1;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,8 +7,8 @@ import java.io.IOException;
 
 public class HashTable {
 
-    private Node[] array;
-    private int arraySize;
+    private final Node[] array;
+    private final int arraySize;
 
     private int collision = 0;
     private int numberOfNames = 0;
@@ -107,7 +107,7 @@ public class HashTable {
      * @throws IOException if the file is not found
      */
     private void readFile() throws IOException {
-        File file = new File("Assignments/Hash/Oppg1/navn.txt");
+        File file = new File("Assignments/five/Oppg1/navn.txt");
 
         BufferedReader br = new BufferedReader(new FileReader(file));
 

@@ -1,7 +1,7 @@
-package Assignments.Hash.Oppg2;
+package Assignments.five.Oppg2;
 
-public class HashTableLinear extends HashTable {
-    public HashTableLinear(int m) {
+public class HashTableSquared extends HashTable{
+    public HashTableSquared(int m) {
         super(m);
     }
 
@@ -11,7 +11,7 @@ public class HashTableLinear extends HashTable {
      */
     protected int addValue(int value){
         int h = hash(value);
-        for (int i = 0; i<arraySize;i++){
+        for (int i = 0; i<arraySize;++i){
             int j = probe(h,i);
             if(array[j] == 0){
                 array[j] = value;
@@ -23,7 +23,9 @@ public class HashTableLinear extends HashTable {
         return -1; //Full
     }
 
-    protected int probe(int hash, int i) {
-        return (hash+i)%arraySize;
+    private int probe(int hash, int i) {
+        int k1 = 7;
+        int k2 = 9;
+        return (int) ((hash+k1*i+k2*Math.pow(i,2))%arraySize);
     }
 }

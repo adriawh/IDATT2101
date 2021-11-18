@@ -1,7 +1,7 @@
-package Assignments.Hash.Oppg2;
+package Assignments.five.Oppg2;
 
 public class Main {
-    private static int tall = 10000019;
+    private static final int tall = 10000019;
     //private static int tall = 50051;
 
     public static void main(String[] args) {
@@ -9,7 +9,6 @@ public class Main {
         int tall = 12500003;
         HashTable hashTable = new HashTableDouble(tall);
         HashTable hashTable1 = new HashTableLinear(tall);
-        hashTable1.f
 
 
         int n= 1;
@@ -42,9 +41,9 @@ public class Main {
 
     private static void runTest(double p){
         System.out.println("Prosent: "+p*100 + "%\n");
-        Assignments.Hash.Oppg2.HashTable hashTableDouble = new HashTableDouble(tall, p);
+        Assignments.five.Oppg2.HashTable hashTableDouble = new HashTableDouble(tall, p);
         hashTableDouble.printData();
-        Assignments.Hash.Oppg2.HashTable hashTableLinear = new HashTableLinear(tall, p);
+        Assignments.five.Oppg2.HashTable hashTableLinear = new HashTableLinear(tall, p);
         hashTableLinear.printData();
         HashTable hashTableSquared = new HashTableSquared(tall, p);
         hashTableSquared.printData();

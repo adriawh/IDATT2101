@@ -1,8 +1,8 @@
-package Assignments.QuickSort_with_CountingSort;
+package Assignments.three;
 
 import java.util.Random;
 
-public class Oppg2 {
+public class Main {
     /**
      *
      * Klasse for å eksperimenter med quickSort og countingSort

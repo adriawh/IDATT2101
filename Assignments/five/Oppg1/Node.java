@@ -1,8 +1,8 @@
-package Assignments.Hash.Oppg1;
+package Assignments.five.Oppg1;
 
 public class Node {
 
-    private String value;
+    private final String value;
     private Node pointer;
 
     public Node(String value){

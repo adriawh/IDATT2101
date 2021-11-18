@@ -1,4 +1,4 @@
-package Assignments.Hash.Oppg2;
+package Assignments.five.Oppg2;
 
 public class HashTableDouble extends HashTable {
 

@@ -1,4 +1,5 @@
-package Assignments.excerise_two;
+
+package Assignments.two;
 
 public class Main {
 
